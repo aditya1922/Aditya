@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="weather.css"?>
+<weather>
+ <heading>Book Portal </heading>
+ <book>
+ <title>City -: Satna</title>
+ <t>temprature -: 40 'C</t>
+ <h>Humidity -: 70%</h>
+ <p>precipitation -: 110</p>
+ <wi> wind Direction-: 120</wi>
+ <description
+  xlink:type="simple"
+  xlink:href="baby.html"
+  xlink:show="new">
+  As his fifth year at Hogwarts School of Witchcraft and
+  Wizardry approaches, 15-year-old Harry Potter is.......
+  </description>
+ </book>
+<book>
+ <title>City -: Satna</title>
+ <t>temprature -: 40 'C</t>
+ <h>Humidity -: 70%</h>
+ <p>precipitation -: 110</p>
+ <wi> wind Direction-: 120</wi>
+ </book>
+<book>
+ <title>City -: Satna</title>
+ <t>temprature -: 40 'C</t>
+ <h>Humidity -: 70%</h>
+ <p>precipitation -: 110</p>
+ <wi> wind Direction-: 120</wi>
+ </book>
+ 
+
+</weather> 
