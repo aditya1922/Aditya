@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="book.css"?>
+<project4>
+<heading>Weather</heading>
+<book>
+<title>Location:-Patna</title>
+<author></author>
+<publisher>Temperature:-31'c</publisher>
+<edition>humidity:-40%</edition>
+<price> precipitation:-50%</price>
+<tf> wind speed:-150 km/hr</tf>
+</book>
+<book>
+<title>Location:-Muzaffarpur</title>
+<author>Temperature:-43'c</author>
+<publisher>humidity:-50%</publisher>
+<edition>precipitation:-70%</edition>
+<price>wind speed:-220 km/hr</price>
+</book>
+<book>
+<title>Location:-Guwahati</title>
+<author>Temperature:-35'c</author>
+<publisher>humidity:-89%</publisher>
+<edition>precipitation:-65%</edition>
+<price>wind speed:-321 km/hr</price>
+</book>
+</project4>
