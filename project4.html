@@ -1,0 +1,28 @@
+public class DisplayWeatherFeed : System.Web.UI.Page
+{
+   protected System.Web.UI.WebControls.Xml Xml1;
+   private void Page_Load(object sender, System.EventArgs e)
+   {
+      // Build the request URL
+      String reqUrl = "http://xoap.weather.com/weather/local/29206?cc=*&dayf=" + 
+        ConfigurationSettings.AppSettings.Get("ExtForecastLength") +  
+          "&prod=xoap&par=" + ConfigurationSettings.AppSettings.Get("PartnerID") + 
+          "&key=" + ConfigurationSettings.AppSettings.Get("LicenseKey");
+      // First we request our content from our provider source .. in this case .. The Weather Channel
+      HttpWebRequest wr = (HttpWebRequest)WebRequest.Create(reqUrl);
+      //load the response into a response object
+      WebResponse resp = wr.GetResponse();
+      // create a new stream that can be placed into an XmlTextReader
+      Stream str = resp.GetResponseStream();
+      XmlTextReader = new XmlTextReader(str);
+      reader.XmlResolver = null;
+      // create a new Xml document
+      XmlDocument doc = new XmlDocument();
+      doc.Load(reader);
+      // set out object properties
+      Xml1.Document = doc;
+      Xml1.TransformSource = "~/Weather/WeatherChannelFeed.xslt";
+   }
+    ...
+}
+
