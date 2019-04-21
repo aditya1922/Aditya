@@ -1,0 +1,137 @@
+#include<stdio.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *ch[10];
+void create(int n)
+{
+    struct node *temp;
+    temp=(struct node *)malloc(sizeof(struct node));
+    temp->data=n;
+    temp->next=NULL;
+    int i=n%10;
+    if(ch[i]==NULL)
+    {
+        ch[i]=temp;
+    }
+    else
+    {
+        struct node *k=ch[i];
+        while(k->next!=NULL)
+        {
+            k=k->next;
+        }
+        k->next=temp;
+
+    }
+}
+void display()
+{
+    int i;
+    struct node *k;
+    for(i=0;i<10;i++)
+    {
+        printf(" %d).",i);
+        k=ch[i];
+        while(k)
+        {
+            printf(" %d",k->data);
+            k=k->next;
+        }
+        printf("\n");
+    }
+}
+void delete()
+{
+    int i,n;
+    printf("enter the data to delete");
+    scanf("%d",&n);
+    i=n%10;
+    struct node *p;
+    struct node *k=ch[i];
+    if(k==NULL)
+    {
+        printf("cannot delete");
+
+    }
+    else if(k->data==n)
+    {
+        ch[i]=k->next;
+    }
+    else
+    {
+        p=k;
+        while(k!=NULL)
+        {
+            if(k->data!=n)
+            {
+                p=k;
+                k=k->next;
+            }
+            else
+            {
+                if(k->next==NULL)
+                    p->next=NULL;
+                else
+                    p->next=k->next;
+            }
+        }
+    }
+    return;
+}
+void search()
+{
+    int i,n;
+    printf("enter the data to be searched");
+    scanf("%d",&n);
+    i=n%10;
+    struct node* k=ch[i];
+    if(k==NULL)
+    {
+        printf("data doesnot exist");
+        return;
+
+    }
+    else
+    {
+        while(k!=NULL)
+        {
+            if(k->data==n)
+            {
+                printf("entered data exist");
+                return;
+            }
+            else k=k->next;
+        }
+        printf("entered data doesnot exist");
+        return;
+    }
+}
+int main()
+{
+    int ch,n,k;
+    while(1)
+    {
+        printf("\nenter your choice\n1.create\n2.display\n3.search\n4.delete\n0.exit\n");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:printf("enter data\n");
+            scanf("%d",&n);
+            while(n!=-1)
+            {
+                create(n);
+                scanf("%d",&n);
+            }
+            break;
+            case 2:display();break;
+            case 3:search();break;
+            case 4:delete();break;
+            case 0:exit(1);
+        }
+
+
+    }
+}
